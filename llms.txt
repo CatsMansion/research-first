@@ -1,0 +1,38 @@
+# research-first
+
+An agent skill that replaces "I think I've researched enough" with machine-checkable
+stopping criteria. For AI agents: load this when a task depends on facts that have not
+been verified, or when you are about to write a spec / design doc / prompt from memory.
+
+## What it gives you
+- S1–S5: five stopping criteria (independent sources ≥3 distinct domains, every conclusion
+  traceable to URL+section, marginal convergence, failure-case search, quantified claims).
+- A1–A6: six breadth axes to widen coverage by switching axes, not searching more.
+- D1–D9: nine associative-expansion directions to catch what you never thought to look for.
+- A journal template and two CLI checkers that machine-verify a research journal and will
+  report FAIL on a journal you wrote yourself (anti-vacuous-pass guards included).
+
+## When to activate (triggers)
+- Before writing a spec / design doc / prompt that depends on unverified facts.
+- When asked to research / investigate / look something up before starting.
+- When reviewing whether an existing conclusion has traceable sources.
+- When you catch yourself citing a single secondary summary as if it were first-hand.
+Do NOT use for: pure code implementation, internal refactors, or reading files already on disk.
+
+## Files (read these)
+- SKILL.md — full instructions, criteria table, gotchas from real failures.
+- references/纪要模板.md — the journal template to fill in.
+- references/判据详解.md — criteria detail + positive/negative control method.
+- references/联想扩散清单.md — the D1–D9 expansion directions with examples.
+- scripts/check_journal.py — checks S1–S5 (conclusion soundness).
+- scripts/check_expansion.py — checks D1–D9 (did you only look one direction).
+- scripts/run_all.py — runs both checkers in one command.
+
+## Run it
+    python scripts/run_all.py <your-journal.md>
+Exit 0 = pass, 1 = red items, 2 = parse failure (guards against a rubber-stamp pass).
+Exit 0 is NOT "perfect": WARN items (S3 not converged, S4 open gaps, passive findings) mean something.
+
+## Install
+    npx skills add CatsMansion/research-first
+Repo: https://github.com/CatsMansion/research-first

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "research-first",
+  "version": "1.0.0",
+  "description": "Do research with stopping criteria instead of vibes. Five machine-checkable stopping criteria, six breadth axes, nine associative-expansion directions, plus two CLI checkers that machine-verify a research journal.",
+  "author": {
+    "name": "CatsMansion"
+  },
+  "homepage": "https://github.com/CatsMansion/research-first",
+  "repository": "https://github.com/CatsMansion/research-first",
+  "license": "MIT",
+  "keywords": ["research", "verification", "citations", "methodology", "epistemology"],
+  "skills": [
+    "./"
+  ]
+}
